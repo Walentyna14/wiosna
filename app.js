@@ -5,12 +5,10 @@ var main = function(){
 	$( window ).resize(gameSize);
 	$("#rabbit").mouseenter(run);
 	$("#rabbit").click(catchRabbit);
-	gameSize();
 	$('button').click(startGame);
 	
 }//End MAIN
 $(document).ready(main);
-
 
 var randomNumber = function(min , max){
 	return (min + Math.floor(Math.random() * max));
@@ -33,17 +31,45 @@ var run = function(){
 
 var gameSize = function() {
 	documentSize();
-	$("#game").css("height", 0.8*height);
-	$("#game").css("width", 0.8*width);
+	$("#game_board").css("height", 0.8*height);
+	$("#game_board").css("width", 0.8*width);
 	run();
 }
 var startGame = function(){
 	$("#main").hide();
+	$("#game_over").hide();
 	$("#game").show();
+	sec = 0;
+	min = "0"+5;
+	setInterval(timer, 1000);
 }
 
 var catchRabbit = function (){
 	$("#game").hide();
 	$("#game_over").show();
 	$("#lose").hide();
+}
+
+var notCatchRabbit = function (){
+	$("#game").hide();
+	$("#game_over").show();
+	$("#win").hide();
+}
+
+var timer= function (){
+	if (sec == 0)
+	{
+		sec = 60;
+		min--;
+	}
+	sec--;
+	if (sec<10) 
+	{
+		sec = "0"+sec;
+	}
+	if (sec==0 && min==0) 
+	{
+		notCatchRabbit();
+	}
+	$("#timer").text(min+":"+sec);
 }

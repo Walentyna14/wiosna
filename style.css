@@ -4,6 +4,11 @@ body
 	padding: 0;
 	margin: 0;
 }
+h1, h2, p
+{
+	padding: 10px;
+	margin: 0;
+}
 
 .text
 {
@@ -49,7 +54,7 @@ button
 
 /*********************** #game *************/
 
-#game
+#game_board
 {
 	background: rgba(240, 238, 215, 1);
 	border-radius: 20px;
@@ -65,4 +70,19 @@ button
 #rabbit
 {
 	position: relative;
+}
+
+#timer
+{
+	background: rgba(145,232,66,1);
+	color: #fff;
+	border-radius: 20px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: auto;
+	text-align: center;
+	font-family: 'Courgette', cursive;
+	font-size: 20px;
+	width: 100px;
 }
