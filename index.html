@@ -4,16 +4,31 @@
 		<meta charset="utf-8"/>
 		<meta name="author" content="Kamila Kosmowska"/>
 		<link rel="stylesheet" type="text/css" href="style.css"/>
-		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet"/>
 		<title> Wielkanoc </title>
 	</head>
 	<body>
-		<div id="main">
-			<h2> Gra wielkanocna</h2>
-			<p> Gra polega na złapaniu uciekającego królika. <br />
-			 Powodzenia</p>
-			 <button type="button"></button>
-			 <p id="copyright">© 2017 Kamila Kosmowska</p>
-			 <img src="img/trawa.png" id="grass"/>
-		</body>
+		<div id="main" class="text">
+			<h1> Gra wielkanocna</h1>
+			<p> Gra polega na złapaniu uciekającego królika. </p>
+			<h2>Powodzenia!</h2>
+			<button type="button">Rozpocznij grę!</button>
+			<img src="img/trawa.png" id="grass"/>
+		</div>
+		<div id="game">
+			<img src="img/zajac.gif" alt="Zając" id="rabbit">
+		</div>
+		<div id="game_over" class="text">
+			<div id="win">
+				<h2>Brawo!</h2>
+				<p> Udało Ci się złapać zająca. </p>
+				<h1> Wesołych świąt</h1>
+			</div>
+			<div id="lose">
+			</div>
+			<img src="img/trawa.png" id="grass"/>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="app.js"></script>
+	</body>
 </html>
