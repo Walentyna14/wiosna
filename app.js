@@ -48,6 +48,7 @@ var catchRabbit = function (){
 	$("#game").hide();
 	$("#game_over").show();
 	$("#lose").hide();
+	$("#win").show();
 }
 
 var notCatchRabbit = function (){
