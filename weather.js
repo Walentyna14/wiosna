@@ -25,7 +25,7 @@ function loadWeather(location, woeid) {
 		success: function(weather) {
 			city = weather.city;
 			temp = weather.forecast[poniedzialek].high+'&deg;';
-			$(".weather").html("W Lany Poniedziałek w "+city+" najwyższą temperaturą będzie około "+temp+"C.");
+			$( ".weather" ).append( "w Lany Poniedziałek w "+city+" najwyższą temperaturą będzie około "+temp+"C.");
 		},
 		error: function(error) {
 			$(".error").html('<p>' + error + '</p>');

@@ -2,12 +2,11 @@ var main = function(){
 	gameSize();
 	$("#game").hide();
 	$("#game_over").hide();
-	$( window ).resize(gameSize);
+	$( window ).resize(gameSize); //Nie, nie może być dokument
 	$("#rabbit").mouseenter(run);
 	$("#rabbit").click(catchRabbit);
 	$('button').click(startGame);
-	
-}//End MAIN
+}
 $(document).ready(main);
 
 var randomNumber = function(min , max){
@@ -27,6 +26,12 @@ var run = function(){
 	var y = randomNumber(marginY,0.7*height-135);
 	$(this).css("left", x);
 	$(this).css("top", y);
+	$("#rabbit").css("background", "url(\"img/zajac.gif\")");
+	setTimeout(pause, 2500);
+}
+
+var pause = function(){
+	$("#rabbit").css("background", "url(\"img/zajac_stop.png\")");
 }
 
 var gameSize = function() {
