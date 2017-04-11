@@ -32,7 +32,7 @@ var rabbitRun = function(){
 	}
 	else
 	{
-		id = setInterval(run, 500);
+		id = setInterval(run, 300);
 		clearTimeout(rabbitStop);
 	}
 }
@@ -79,6 +79,7 @@ var notCatchRabbit = function (){
 	$("#game").hide();
 	$("#game_over").show();
 	$("#win").hide();
+	$("#lose").show();
 }
 
 var timer= function (){
