@@ -10,6 +10,9 @@ var main = function(){
 }
 $(document).ready(main);
 
+var id;
+var rabbitStop;
+
 var randomNumber = function(min , max){
 	return (min + Math.floor(Math.random() * max));
 };
@@ -19,17 +22,18 @@ var documentSize = function(){
 	width = $( document ).width();
 	console.log(width);
 }
-var id;
 
 var rabbitRun = function(){
-	if(width>768)
+	clearInterval(id);
+	if(width>1030)
 	{
-		clearInterval(id);
+		
 		$("#rabbit").mouseenter(run);
 	}
 	else
 	{
-		 id = setInterval(run, 1500);
+		id = setInterval(run, 1500);
+		clearTimeout(rabbitStop);
 	}
 }
 
@@ -42,13 +46,13 @@ var run = function(){
 	$("#rabbit").css("left", x);
 	$("#rabbit").css("top", y);
 	$("#rabbit").css("background", "url(\"img/zajac.gif\")");
-	//setTimeout(pause, 2500);
+	rabbitStop = setTimeout(pause, 2500);
 }
-/*
+
 var pause = function(){
 	$("#rabbit").css("background", "url(\"img/zajac_stop.png\")");
 }
-*/
+
 var gameSize = function() {
 	documentSize();
 	$("#game_board").css("height", 0.8*height);
