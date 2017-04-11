@@ -3,7 +3,8 @@ var main = function(){
 	$("#game").hide();
 	$("#game_over").hide();
 	$( window ).resize(gameSize); //Nie, nie może być dokument
-	$("#rabbit").mouseenter(run);
+	//$("#rabbit").mouseenter(PC);
+	//rabbitRun();
 	$("#rabbit").click(catchRabbit);
 	$('button').click(startGame);
 }
@@ -16,6 +17,20 @@ var randomNumber = function(min , max){
 var documentSize = function(){
 	height = $( document ).height();
 	width = $( document ).width();
+	console.log(width);
+}
+var id;
+
+var rabbitRun = function(){
+	if(width>768)
+	{
+		clearInterval(id);
+		$("#rabbit").mouseenter(run);
+	}
+	else
+	{
+		 id = setInterval(run, 1500);
+	}
 }
 
 var run = function(){
@@ -23,22 +38,22 @@ var run = function(){
 	var marginX = 0.1*width;
 	var x = randomNumber(marginX,0.7*width-130);
 	var marginY = 0.1*height;
-	var y = randomNumber(marginY,0.7*height-135);
-	$(this).css("left", x);
-	$(this).css("top", y);
+	var y = randomNumber(marginY,0.7*height-130);
+	$("#rabbit").css("left", x);
+	$("#rabbit").css("top", y);
 	$("#rabbit").css("background", "url(\"img/zajac.gif\")");
-	setTimeout(pause, 2500);
+	//setTimeout(pause, 2500);
 }
-
+/*
 var pause = function(){
 	$("#rabbit").css("background", "url(\"img/zajac_stop.png\")");
 }
-
+*/
 var gameSize = function() {
 	documentSize();
 	$("#game_board").css("height", 0.8*height);
 	$("#game_board").css("width", 0.8*width);
-	run();
+	rabbitRun();
 }
 var startGame = function(){
 	$("#main").hide();
