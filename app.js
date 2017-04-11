@@ -32,7 +32,7 @@ var rabbitRun = function(){
 	}
 	else
 	{
-		id = setInterval(run, 1500);
+		id = setInterval(run, 1000);
 		clearTimeout(rabbitStop);
 	}
 }
